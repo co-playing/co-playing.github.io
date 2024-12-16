@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      margin-left: 20px;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    nav a {
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-decoration: none;
+      color: gray;
+      margin: 0.0002px 0; /* 줄간격 좁게 설정 */
+      padding: 5px;
+    }
+
+    nav a#co-playing {
+      font-size: 4rem;
+      font-weight: 300;
+      color: black;
+      margin-bottom: 50px;
+    }
+
+    nav a[href="logic.html"] {
+      background-color: #FDFD96;
+      color: black;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 20px;
+      width: 100%;
+      flex-grow: 1;
+      padding: 20px;
+      align-items: start;
+      margin: 0 auto;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    section.composition {
+      text-align: left;
+    }
+
+    section.audio-logic {
+      text-align: left;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin: 1px 0; /* 줄간격 좁게 설정 */
+    }
+
+    section video {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    section img {
+      margin-bottom: 10px;
+    }
+
+    section.sound-logic img {
+      width: 100%;
+    }
+
+    section.sound-logic p {
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      background-color: gray;
+      width: 1px;
+      height: 100%;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 1rem;
+      color: gray;
+      width: 100%;
+      margin-top: auto;
+      padding-bottom: 10px;
+    }
+
+    /* 드래그 선택 영역 색상 */
+    ::selection {
+      background-color: #FDFD96;
+      color: black;
+    }
+
+    ::-moz-selection {
+      background-color: #FDFD96;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="coplaying.html" id="co-playing">CO-PLAYING</a>
+    <a href="concept.html">concept</a>
+    <a href="logic.html" style="background-color: #FDFD96; color: black;">logic</a>
+    <a href="demo.html">demo</a>
+  </nav>
+
+  <main>
+    <section class="composition">
+      <h2>Composition</h2>
+      <h3>1st Movement: Human Action</h3>
+      <p>A person breathes into the water.</p>
+      <video controls>
+        <source src="1st movement.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>2nd Movement: Machine Vision</h3>
+      <p>The machine observes changes in the water and produces sound.</p>
+      <video controls>
+        <source src="2nd movement.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>3rd Movement: Machine Hearing</h3>
+      <p>The machine listens to changes in the water and produces sound.</p>
+      <video controls>
+        <source src="3rd movement.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>4th Movement: Human & Machine Co-Playing</h3>
+      <p>The human and the machine perform together.</p>
+      <video controls>
+        <source src="4th movement.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>Score</h3>
+      <p>All movements are performed using the same score.</p>
+      <img src="score1.png" alt="Score">
+      <p>1st movement.</p>
+      <img src="score2.png" alt="Score">
+      <p>2nd movement.</p>
+      <img src="score3.png" alt="Score">
+      <p>3rd movement.</p>
+      <img src="score4.png" alt="Score">
+      <p>4th movement.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="sound-logic">
+      <h2>Sound Logic</h2>
+      <img src="soundlogic.png" alt="Sound Logic Diagram">
+
+      <h3>#1. Water Sound</h3>
+      <p>The actual sound of water is transmitted via a microphone.</p>
+      <img src="mic.jpg" alt="Microphone">
+
+      <h3>#2. Sound Synthesis</h3>
+      <p>The information about water movement obtained through optical flow affects volume, frequency, and reverb amount.</p>
+      <img src="opticalflow.png" alt="Optical Flow">
+      <p>When blowing into water with a straw, a "bubbling" sound is produced. When dropping water with a pipette, a "droplet" sound is produced.</p>
+      <img src="blowing.jpg" alt="Blowing into Water">
+      <p><strong>Sound 1: Bubbling Water</strong></p>
+      <ul>
+        <li><strong>Control</strong>
+          <ul>
+            <li>Toggle ON/OFF with key '1'</li>
+          </ul>
+        </li>
+        <li><strong>Sound Design</strong>
+          <ul>
+            <li>Uses "water-bubbles.wav" sample</li>
+            <li>Digital reverb (NRev, 0.15 mix)</li>
+            <li>Delay line (800ms) with feedback loop</li>
+          </ul>
+        </li>
+        <li><strong>Interaction Response</strong>
+          <ul>
+            <li>Movement increases gain amplitude</li>
+            <li>Adjusts echo mix (0.4 to 0.6)</li>
+            <li>Controls reverb mix (0.15 to 0.3)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <img src="spoidwater.jpg" alt="Dropping Water with a Pipette">
+      <p><strong>Sound 2: Water Drops</strong></p>
+      <ol>
+        <li><strong>Control</strong>
+          <ul>
+            <li>Toggle ON/OFF with key '2'</li>
+          </ul>
+        </li>
+        <li><strong>Sound Design</strong>
+          <ul>
+            <li>Uses "water-drop.wav" sample</li>
+            <li>FM synthesis with 120Hz sine oscillator</li>
+            <li>Low-pass filter (1200Hz)</li>
+            <li>Randomized playback rate (0.8-1.2)</li>
+          </ul>
+        </li>
+        <li><strong>Interaction Response</strong>
+          <ul>
+            <li>Controls drop trigger frequency</li>
+            <li>Adjusts individual drop intensity</li>
+            <li>Modulates background tone gain</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>#3. Transcription - MIDI to Audio</h3>
+      <p>The pitch of the actual water sound is transcribed and converted into a virtual instrument sound.</p>
+      <img src="midi.png" alt="MIDI Transcription">
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Jaeran Choi, Sein Lee
+  </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO-PLAYING</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      margin-left: 20px;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    nav a {
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-decoration: none;
+      color: gray;
+      margin: 0.0002px 0; /* 줄간격 좁게 설정 */
+      padding: 5px;
+    }
+
+    nav a#co-playing {
+      font-size: 4rem; /* CO-PLAYING을 훨씬 크게 설정 */
+      font-weight: 300;
+      color: black;
+      margin-bottom: 50px; /* 아래 단어들과 간격 추가 */
+    }
+
+    nav a:active {
+      background-color: #FDFD96;
+      color: black;
+    }
+
+    /* 드래그 선택 영역 색상 */
+    ::selection {
+      background-color: #FDFD96;
+      color: black;
+    }
+
+    ::-moz-selection {
+      background-color: #FDFD96;
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1rem;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="coplaying.html" id="co-playing">CO-PLAYING</a>
+    <a href="concept.html">concept</a>
+    <a href="logic.html">logic</a>
+    <a href="demo.html">demo</a>
+  </nav>
+
+  <footer>
+    &copy; 2024 Jaeran Choi, Sein Lee
+  </footer>
+</body>
+</html>
